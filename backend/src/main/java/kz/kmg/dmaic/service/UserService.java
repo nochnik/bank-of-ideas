@@ -1,6 +1,7 @@
 package kz.kmg.dmaic.service;
 
 import kz.kmg.dmaic.dto.CreateUserRequest;
+import kz.kmg.dmaic.dto.UpdateUserRequest;
 import kz.kmg.dmaic.dto.UserProfileResponse;
 import kz.kmg.dmaic.entity.Role;
 import kz.kmg.dmaic.entity.User;
@@ -44,6 +45,17 @@ public class UserService {
         User user = userRepository.findById(userId)
                 .orElseThrow(() -> new IllegalArgumentException("User not found: " + userId));
         user.setAvatarUrl(avatarUrl);
+        return toProfileResponse(userRepository.save(user));
+    }
+
+    public UserProfileResponse updateParticipant(Long userId, UpdateUserRequest request) {
+        User user = userRepository.findById(userId)
+                .orElseThrow(() -> new IllegalArgumentException("User not found: " + userId));
+        if (user.getRole() != Role.PARTICIPANT) {
+            throw new IllegalArgumentException("User is not a participant: " + userId);
+        }
+        user.setFullName(request.fullName());
+        user.setPosition(request.position());
         return toProfileResponse(userRepository.save(user));
     }
 

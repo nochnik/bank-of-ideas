@@ -30,6 +30,13 @@ public class AdminController {
         return ResponseEntity.ok(userService.getAllParticipants());
     }
 
+    @PutMapping("/users/{userId}")
+    public ResponseEntity<UserProfileResponse> updateUser(
+            @PathVariable Long userId,
+            @Valid @RequestBody UpdateUserRequest request) {
+        return ResponseEntity.ok(userService.updateParticipant(userId, request));
+    }
+
     @GetMapping("/stages/submitted")
     public ResponseEntity<List<StageResponse>> getSubmittedStages() {
         return ResponseEntity.ok(stageService.getSubmittedStages());
