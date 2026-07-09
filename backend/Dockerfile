@@ -10,9 +10,6 @@ RUN mvn clean package -DskipTests -B
 FROM eclipse-temurin:21-jre
 WORKDIR /app
 
-RUN useradd --system --uid 10001 appuser
-COPY --from=build --chown=appuser:appuser /app/target/dmaic-backend-*.jar app.jar
-
-USER appuser
+COPY --from=build /app/target/dmaic-backend-*.jar app.jar
 EXPOSE 8080
 ENTRYPOINT ["java", "-jar", "/app/app.jar"]
