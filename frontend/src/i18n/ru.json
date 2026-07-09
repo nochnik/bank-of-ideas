@@ -1,0 +1,103 @@
+{
+  "nav": {
+    "home": "Главная",
+    "dashboard": "Мой кабинет",
+    "admin": "Панель администратора",
+    "logout": "Выйти"
+  },
+  "auth": {
+    "login": "Войти",
+    "username": "Логин",
+    "password": "Пароль",
+    "title": "Вход в систему",
+    "error": "Неверный логин или пароль",
+    "loading": "Входим..."
+  },
+  "home": {
+    "hero_title": "Программа <br/><accent>непрерывного</accent><br/>совершенствования",
+    "hero_subtitle": "Участники проходят 4 этапа DMAIC, получают баррели за каждый шаг и соревнуются за награды от председателя правления.",
+    "start_date": "Старт: 18 мая 2026",
+    "cta_login": "Войти в платформу",
+    "cta_dashboard": "Мой кабинет",
+    "cta_admin": "Панель администратора",
+    "leaderboard_eyebrow": "Рейтинг",
+    "leaderboard_sub": "Топ участников по количеству баррелей · до 20 максимум",
+    "loading": "Загрузка рейтинга...",
+    "participants_count": "{{count}} участников",
+    "no_data": "Нет данных"
+  },
+  "timeline": {
+    "section_label": "Этапы программы",
+    "section_title": "4 шага DMAIC",
+    "step_prefix": "ЭТАП",
+    "d_label": "Define",
+    "d_sub": "Определение проблемы",
+    "ma_label": "Measure + Analyze",
+    "ma_sub": "Измерение и анализ данных",
+    "i_label": "Improve",
+    "i_sub": "Оптимизация процесса",
+    "c_label": "Control",
+    "c_sub": "Контроль результатов"
+  },
+  "stage": {
+    "D": "Define — Определение",
+    "M_A": "Measure & Analyze — Измерение и Анализ",
+    "I": "Improve — Улучшение",
+    "C": "Control — Контроль",
+    "save": "Сохранить черновик",
+    "submit": "Отправить на проверку",
+    "status": {
+      "DRAFT": "Черновик",
+      "SUBMITTED": "На проверке",
+      "APPROVED": "Одобрен",
+      "REJECTED": "Отклонён"
+    },
+    "deadline": "Дедлайн",
+    "rejectedNotice": "Этап отклонён администратором. Внесите исправления и отправьте повторно.",
+    "resubmit": "Отправить повторно"
+  },
+  "barrel": {
+    "label": "Барреля",
+    "total": "Итого баррелей",
+    "reward": {
+      "JAPAN_TRIP": "Стажировка в Японии",
+      "LEADERSHIP_AWARD": "Награждение от руководства",
+      "BRANDED_MERCH": "Имиджевая продукция",
+      "PROJECT_BADGE": "Значок проекта"
+    }
+  },
+  "leaderboard": {
+    "title": "Рейтинг участников",
+    "rank": "Место",
+    "participant": "Участник",
+    "barrels": "Баррели",
+    "reward": "Награда"
+  },
+  "admin": {
+    "createUser": "Создать участника",
+    "review": "Проверить",
+    "score": "Оценка (%)",
+    "comment": "Комментарий",
+    "approve": "Подтвердить оценку",
+    "reject": "На доработку",
+    "rejectTitle": "Отправить на доработку",
+    "rejectComment": "Причина доработки",
+    "rejectConfirm": "Отправить",
+    "dashboard": "Дашборд",
+    "statsTotal": "Всего участников",
+    "statsSubmitted": "На проверке",
+    "statsApproved": "Одобрено",
+    "statsRejected": "На доработке",
+    "statsDraft": "Черновики",
+    "participantsProgress": "Прогресс участников",
+    "overallProgress": "Общий прогресс",
+    "attachments": "Прикреплённые файлы",
+    "download": "Скачать",
+    "noFiles": "Файлы не прикреплены",
+    "uploadFile": "Загрузить файл",
+    "dropFiles": "Перетащите файлы сюда или нажмите для выбора",
+    "fileLimit": "Макс. 5 файлов, до 10 МБ каждый (PDF, DOCX, XLSX, PNG, JPG)",
+    "deleteFile": "Удалить",
+    "stageNotStarted": "Не начат"
+  }
+}

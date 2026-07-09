@@ -1,0 +1,11 @@
+{
+  "version": 1,
+  "skills": {
+    "Shadcn UI & Blocks": {
+      "source": "masonjames/Shadcnblocks-Skill",
+      "sourceType": "github",
+      "skillPath": "skills/shadcn-ui/SKILL.md",
+      "computedHash": "e28d4dfdf10928a0a59a8b7c7a67cb34b13eb11123fa9fe91741474d766ae253"
+    }
+  }
+}

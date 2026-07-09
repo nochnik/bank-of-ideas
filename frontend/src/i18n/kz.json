@@ -1,0 +1,103 @@
+{
+  "nav": {
+    "home": "Басты бет",
+    "dashboard": "Менің кабинетім",
+    "admin": "Әкімші панелі",
+    "logout": "Шығу"
+  },
+  "auth": {
+    "login": "Кіру",
+    "username": "Логин",
+    "password": "Құпия сөз",
+    "title": "Жүйеге кіру",
+    "error": "Қате логин немесе құпия сөз",
+    "loading": "Кіруде..."
+  },
+  "home": {
+    "hero_title": "Үздіксіз <br/><accent>жетілдіру</accent><br/>бағдарламасы",
+    "hero_subtitle": "Қатысушылар DMAIC-тің 4 кезеңінен өтіп, әр қадам үшін бочкалар алып, басқарма төрағасынан марапат үшін бәсекелеседі.",
+    "start_date": "Басталуы: 18 мамыр 2026",
+    "cta_login": "Платформаға кіру",
+    "cta_dashboard": "Менің кабинетім",
+    "cta_admin": "Әкімші панелі",
+    "leaderboard_eyebrow": "Рейтинг",
+    "leaderboard_sub": "Барреліктер саны бойынша үздік қатысушылар · максимум 20",
+    "loading": "Рейтинг жүктелуде...",
+    "participants_count": "{{count}} қатысушы",
+    "no_data": "Деректер жоқ"
+  },
+  "timeline": {
+    "section_label": "Бағдарлама кезеңдері",
+    "section_title": "DMAIC-тің 4 қадамы",
+    "step_prefix": "КЕЗЕҢ",
+    "d_label": "Define",
+    "d_sub": "Мәселені анықтау",
+    "ma_label": "Measure + Analyze",
+    "ma_sub": "Деректерді өлшеу және талдау",
+    "i_label": "Improve",
+    "i_sub": "Процесті оңтайландыру",
+    "c_label": "Control",
+    "c_sub": "Нәтижелерді бақылау"
+  },
+  "stage": {
+    "D": "Define — Анықтау",
+    "M_A": "Measure & Analyze — Өлшеу және Талдау",
+    "I": "Improve — Жақсарту",
+    "C": "Control — Бақылау",
+    "save": "Жобаны сақтау",
+    "submit": "Тексеруге жіберу",
+    "status": {
+      "DRAFT": "Жоба",
+      "SUBMITTED": "Тексеруде",
+      "APPROVED": "Бекітілді",
+      "REJECTED": "Қабылданбады"
+    },
+    "deadline": "Мерзімі",
+    "rejectedNotice": "Кезең әкімші тарапынан қабылданбады. Түзетулер енгізіп, қайта жіберіңіз.",
+    "resubmit": "Қайта жіберу"
+  },
+  "barrel": {
+    "label": "Баррель",
+    "total": "Жиынтық барреліктер",
+    "reward": {
+      "JAPAN_TRIP": "Жапонияға тағылымдама",
+      "LEADERSHIP_AWARD": "Басшылық марапаты",
+      "BRANDED_MERCH": "Имиджді өнімдер",
+      "PROJECT_BADGE": "Жоба белгісі"
+    }
+  },
+  "leaderboard": {
+    "title": "Қатысушылар рейтингі",
+    "rank": "Орын",
+    "participant": "Қатысушы",
+    "barrels": "Барреліктер",
+    "reward": "Марапат"
+  },
+  "admin": {
+    "createUser": "Қатысушы жасау",
+    "review": "Тексеру",
+    "score": "Баға (%)",
+    "comment": "Пікір",
+    "approve": "Бағаны растау",
+    "reject": "Қайта өңдеуге",
+    "rejectTitle": "Қайта өңдеуге жіберу",
+    "rejectComment": "Қайта өңдеу себебі",
+    "rejectConfirm": "Жіберу",
+    "dashboard": "Дашборд",
+    "statsTotal": "Барлық қатысушылар",
+    "statsSubmitted": "Тексеруде",
+    "statsApproved": "Бекітілді",
+    "statsRejected": "Қайта өңдеуде",
+    "statsDraft": "Жобалар",
+    "participantsProgress": "Қатысушылар прогресі",
+    "overallProgress": "Жалпы прогрес",
+    "attachments": "Тіркелген файлдар",
+    "download": "Жүктеу",
+    "noFiles": "Файлдар тіркелмеген",
+    "uploadFile": "Файл жүктеу",
+    "dropFiles": "Файлдарды осында сүйреңіз немесе таңдау үшін басыңыз",
+    "fileLimit": "Макс. 5 файл, әрқайсысы 10 МБ-ға дейін (PDF, DOCX, XLSX, PNG, JPG)",
+    "deleteFile": "Жою",
+    "stageNotStarted": "Басталмаған"
+  }
+}

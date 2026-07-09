@@ -1,0 +1,267 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* ─── Local Fonts ───────────────────────────────────────────────── */
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/ru/Gilroy-Regular_0.ttf') format('truetype');
+  font-weight: 400;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/ru/Gilroy-Light_0.ttf') format('truetype');
+  font-weight: 300;
+  font-style: normal;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/ru/Gilroy-LightItalic_0.ttf') format('truetype');
+  font-weight: 300;
+  font-style: italic;
+  font-display: swap;
+}
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/ru/Gilroy-Medium_0.ttf') format('truetype');
+  font-weight: 500;
+  font-style: normal;
+  font-display: swap;
+}
+/* Map Medium → bold/black since no heavier weights available */
+@font-face {
+  font-family: 'Gilroy';
+  src: url('../fonts/ru/Gilroy-Medium_0.ttf') format('truetype');
+  font-weight: 600 900;
+  font-style: normal;
+  font-display: swap;
+}
+
+/* ─── Dark theme ────────────────────────────────────────────────── */
+:root,
+.dark {
+  --canvas:        #09090b;
+  --s1:            #09090b;
+  --s2:            #18181b;
+  --s3:            #27272a;
+  --hl:            #27272a;
+  --hl-strong:     #3f3f46;
+
+  --ink:           #fafafa;
+  --ink-muted:     #e4e4e7;
+  --ink-subtle:    #a1a1aa;
+  --ink-tertiary:  #71717a;
+
+  /* Monochrome accent (white) */
+  --accent:        #fafafa;
+  --accent-hover:  #e4e4e7;
+  --accent-focus:  #fafafa;
+  --accent-subtle: rgba(250,250,250,0.10);
+
+  --barrel:        #f0b429;
+  --barrel-dim:    #c9921a;
+
+  --success:       #22c55e;
+  --danger:        #f43f5e;
+
+  color-scheme: dark;
+}
+
+/* ─── Light theme ───────────────────────────────────────────────── */
+.light {
+  --canvas:        #ffffff;
+  --s1:            #ffffff;
+  --s2:            #f4f4f5;
+  --s3:            #e4e4e7;
+  --hl:            #e4e4e7;
+  --hl-strong:     #d4d4d8;
+
+  --ink:           #09090b;
+  --ink-muted:     #3f3f46;
+  --ink-subtle:    #71717a;
+  --ink-tertiary:  #a1a1aa;
+
+  /* Monochrome accent (black) */
+  --accent:        #09090b;
+  --accent-hover:  #27272a;
+  --accent-focus:  #09090b;
+  --accent-subtle: rgba(9,9,11,0.08);
+
+  --barrel:        #d97706;
+  --barrel-dim:    #b45309;
+
+  --success:       #16a34a;
+  --danger:        #e11d48;
+
+  color-scheme: light;
+}
+
+/* ─── Base ──────────────────────────────────────────────────────── */
+@layer base {
+  *, *::before, *::after { box-sizing: border-box; }
+
+  html { transition: background-color 200ms ease, color 200ms ease; }
+
+  body {
+    font-family: 'Gilroy', 'Montserrat', system-ui, -apple-system, sans-serif;
+    font-size: 0.9375rem;
+    line-height: 1.6;
+    font-weight: 400;
+    color: var(--ink);
+    background-color: var(--canvas);
+    -webkit-font-smoothing: antialiased;
+    -moz-osx-font-smoothing: grayscale;
+    transition: background-color 200ms ease, color 200ms ease;
+  }
+
+  h1 { font-size: 2.75rem;  font-weight: 800; line-height: 1.08; letter-spacing: -0.04em; }
+  h2 { font-size: 1.875rem; font-weight: 700; line-height: 1.18; letter-spacing: -0.03em; }
+  h3 { font-size: 1.25rem;  font-weight: 600; line-height: 1.25; letter-spacing: -0.02em; }
+  h4 { font-size: 1rem;     font-weight: 600; line-height: 1.35; letter-spacing: -0.01em; }
+
+  ::selection { background: rgba(91,141,238,0.25); }
+}
+
+/* ─── Components ────────────────────────────────────────────────── */
+@layer components {
+  .btn {
+    @apply inline-flex items-center gap-2 px-4 py-2.5 rounded-xl text-sm font-600
+           transition-all duration-200 focus:outline-none focus:ring-2 focus:ring-hl-strong;
+  }
+  .btn-primary   { @apply btn; color: var(--canvas); background: var(--accent); }
+  .btn-primary:hover { background: var(--accent-hover); }
+  .btn-secondary { @apply btn bg-s1 text-ink border border-hl hover:bg-s2; }
+  .btn-ghost     { @apply btn bg-transparent text-ink-subtle hover:text-ink hover:bg-s1; }
+
+  .card        { @apply bg-s1 border border-hl rounded-2xl p-6; }
+  .card-lifted { @apply bg-s2 border border-hl-strong rounded-2xl p-6; }
+  .card-panel  { @apply bg-s1 border border-hl rounded-2xl p-6; }
+
+  .input {
+    @apply w-full bg-s2 border border-hl rounded-xl px-4 py-2.5
+           text-sm text-ink placeholder-ink-tertiary
+           focus:outline-none focus:ring-2 focus:ring-[#5b8dee]/40 focus:border-accent
+           transition-all duration-200;
+  }
+  .textarea { @apply input resize-none; }
+
+  .eyebrow {
+    font-size: 11px;
+    font-weight: 600;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: var(--ink-subtle);
+  }
+
+  .badge           { @apply inline-flex items-center px-2.5 py-0.5 rounded-full text-xs font-600; }
+  .badge-draft     { @apply badge bg-s2 text-ink-subtle; }
+  .badge-submitted { @apply badge text-accent; background: var(--accent-subtle); }
+  .badge-approved  { @apply badge text-success; background: rgba(34,197,94,0.12); }
+  .badge-rejected  { @apply badge text-danger; background: rgba(244,63,94,0.12); }
+
+  .barrel {
+    @apply inline-flex items-center justify-center w-9 h-9 rounded-full font-700 text-sm;
+    color: var(--barrel);
+    background: rgba(240,180,41,0.12);
+  }
+
+  .divider   { @apply border-t border-hl; }
+  .animate-in { animation: fadeUp 0.6s cubic-bezier(0.16,1,0.3,1) both; }
+}
+
+@keyframes spin {
+  to { transform: rotate(360deg); }
+}
+
+@keyframes blink {
+  0%, 100% { opacity: 1; }
+  50% { opacity: 0; }
+}
+
+@keyframes fadeUp {
+  from { opacity: 0; transform: translateY(12px); }
+  to   { opacity: 1; transform: translateY(0); }
+}
+
+/* ─── Sign-in page animations ───────────────────────────────────── */
+@keyframes signinFadeSlide {
+  from { opacity: 0; filter: blur(6px); transform: translateY(16px); }
+  to   { opacity: 1; filter: blur(0);   transform: translateY(0); }
+}
+@keyframes signinSlideRight {
+  from { opacity: 0; filter: blur(6px); transform: translateX(28px); }
+  to   { opacity: 1; filter: blur(0);   transform: translateX(0); }
+}
+@keyframes signinTestimonial {
+  from { opacity: 0; filter: blur(4px); transform: translateY(14px) scale(0.97); }
+  to   { opacity: 1; filter: blur(0);   transform: translateY(0)    scale(1); }
+}
+
+.signin-element {
+  opacity: 0;
+  animation: signinFadeSlide 0.75s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+.signin-slide-right {
+  opacity: 0;
+  animation: signinSlideRight 0.9s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+.signin-testimonial {
+  opacity: 0;
+  animation: signinTestimonial 0.7s cubic-bezier(0.22,1,0.36,1) forwards;
+}
+
+.signin-delay-50   { animation-delay: 0.05s; }
+.signin-delay-100  { animation-delay: 0.12s; }
+.signin-delay-200  { animation-delay: 0.22s; }
+.signin-delay-300  { animation-delay: 0.32s; }
+.signin-delay-400  { animation-delay: 0.42s; }
+.signin-delay-500  { animation-delay: 0.52s; }
+.signin-delay-600  { animation-delay: 0.62s; }
+.signin-delay-700  { animation-delay: 0.72s; }
+.signin-delay-800  { animation-delay: 0.82s; }
+.signin-delay-900  { animation-delay: 0.92s; }
+.signin-delay-1000 { animation-delay: 1.00s; }
+.signin-delay-1200 { animation-delay: 1.12s; }
+.signin-delay-1400 { animation-delay: 1.24s; }
+
+/* Kill browser autofill blue background on inputs */
+input:-webkit-autofill,
+input:-webkit-autofill:hover,
+input:-webkit-autofill:focus,
+input:-webkit-autofill:active {
+  -webkit-box-shadow: 0 0 0 1000px #ffffff inset !important;
+  box-shadow: 0 0 0 1000px #ffffff inset !important;
+  -webkit-text-fill-color: #111111 !important;
+  background-color: #ffffff !important;
+  caret-color: #111111;
+}
+
+/* Force Spline canvas to be transparent so parent bg shows through */
+.spline-canvas-wrapper canvas,
+.spline-canvas-wrapper > div > canvas {
+  background: transparent !important;
+}
+
+@keyframes spotlight {
+  0%   { opacity: 0; transform: translate(-72%, -62%) rotate(10deg) scale(0.5); }
+  100% { opacity: 1; transform: translate(-50%, -40%) rotate(350deg) scale(1); }
+}
+.animate-spotlight {
+  animation: spotlight 2s ease forwards;
+}
+
+@keyframes barrelPulse {
+  0%, 100% { opacity: 1; }
+  50%       { opacity: 0.6; }
+}
+
+/* ─── Language-specific fonts ───────────────────────────────────── */
+html[lang='ru'] body {
+  font-family: 'Gilroy', system-ui, -apple-system, sans-serif;
+}
+html[lang='kz'] body {
+  font-family: 'Montserrat', system-ui, -apple-system, sans-serif;
+}
